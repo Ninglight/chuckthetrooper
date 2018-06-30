@@ -1,0 +1,78 @@
+// Color variables
+
+$color-primary: #F25A24;
+$color-content: #696969;
+
+// Import font
+
+@font-face {
+   font-family: 'Kollektif-Bold';
+   src:  url('../fonts/kollektif/Kollektif-bold.ttf') format('ttf');
+   font-weight: 800;
+}
+
+@font-face {
+   font-family: 'Kollektif';
+   src:  url('../fonts/kollektif/Kollektif.ttf') format('ttf');
+   font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:  url('../fonts/lato/Lato-Regular.ttf') format('ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Lato-Bold';
+  src:  url('../fonts/lato/Lato-Bold.ttf') format('ttf');
+  font-weight: 800;
+}
+
+
+// Global
+
+body {
+  font-family: 'Lato';
+  font-size: 1rem;
+}
+
+h1 {
+  font-family: 'Kollektif-Bold';
+  font-family: 4rem;
+  color: $color-primary;
+}
+
+h2 {
+  font-family: 'Kollektif-Bold';
+  font-family: 3rem;
+  color: $color-primary;
+}
+
+// Global Container
+
+.container-search, .container-result {
+  width: 50%;
+}
+
+.container-search {
+
+}
+
+.container-result {
+
+
+  &--home {
+    background: url("/images/chuckthetrooper.jpg") right center contain;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .container-search, .container-result {
+    width: 100%;
+  }
+
+}
+
+
