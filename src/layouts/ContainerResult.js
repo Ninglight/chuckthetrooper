@@ -2,55 +2,63 @@
 import React, { Component } from 'react' // eslint-disable-line no-unused-vars
 
 class result extends Component {
-  render () {
-    return (
-      <div className="container-result">
-        <h1>Result for «Lorem ipsum»</h1>
-        <ul className="list-result">
-          <li className="item-result">
-            <div className="img-item-result">
-              <img src="https://picsum.photos/60/60" alt="" width="60" height="60"/>
-            </div>
-            <div className="content-item-result">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </li>
-          <li className="item-result">
-            <div className="img-item-result">
-              <img src="https://picsum.photos/60/60" alt="" width="60" height="60"/>
-            </div>
-            <div className="content-item-result">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+  constructor (props) {
+    super(props)
+    this.state = {
+      error: null,
+      isLoaded: false,
+      items: []
+    }
+  }
 
-          </li>
-          <li className="item-result">
-            <div className="img-item-result">
-              <img src="https://picsum.photos/60/60" alt="" width="60" height="60"/>
-            </div>
-            <div className="content-item-result">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </li>
-          <li className="item-result">
-            <div className="img-item-result">
-              <img src="https://picsum.photos/60/60" alt="" width="60" height="60"/>
-            </div>
-            <div className="content-item-result">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </li>
-          <li className="item-result">
-            <div className="img-item-result">
-              <img src="https://picsum.photos/60/60" alt="" width="60" height="60"/>
-            </div>
-            <div className="content-item-result">
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    )
+  // AJAX call to API
+  componentDidMount (query) {
+    fetch('https://api.chucknorris.io/jokes/search?query=rifle') // eslint-disable-line no-undef
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result.result
+          })
+        },
+        // handle errors
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          })
+        }
+      )
+  }
+
+  render () {
+    const { error, isLoaded, items } = this.state
+    if (error) {
+      return <div>Error: {error.message}</div>
+    } else if (!isLoaded) {
+      return <div>Loading...</div>
+    } else {
+      return (
+        <div className="container-result">
+          <h1>Result for «Lorem ipsum»</h1>
+          <ul className="list-result">
+            {items.map(item => (
+              <a href={item.url} target="_blank" key={item.id}>
+                <li className="item-result">
+                  <div className="img-item-result">
+                    <img src={item.icon_url} alt="" width="60" height="60"/>
+                  </div>
+                  <div className="content-item-result">
+                    <p>{item.value}</p>
+                  </div>
+                </li>
+              </a>
+            ))}
+          </ul>
+        </div>
+      )
+    }
   }
 }
 

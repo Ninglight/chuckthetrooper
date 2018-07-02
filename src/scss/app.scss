@@ -175,6 +175,11 @@ h2 {
     padding: 0;
     margin: 0 auto;
 
+    a, a:link, a:visited, a:hover, a:active, a p{
+      text-decoration: none;
+      color: $color-content;
+    }
+
     .item-result {
       list-style: none;
       display: flex;
