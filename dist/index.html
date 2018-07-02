@@ -8,27 +8,76 @@
     <meta name="author" content="Valetin Bourreau">
     <meta name="description" content="Search a chuck norris fact">
     <meta name="theme-color" content="#F25A24">
-
-    <link href="app.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
 
 </head>
 
-<body>
+<body class="app">
+
+<div class="container-nav">
+    <img src="../icons/logo.svg" alt="chuckthetrooper logo">
+</div>
 
 <div class="container-search">
-    <img src="" alt="chuckthetrooper logo">
-    <div class="form-search">
+    <div class="form-search full-size">
         <h1>Search a new story of chuck norris ?</h1>
         <form action="POST">
-            <input type="text">
-            <input type="submit" value="Submit">
+            <input class="input-text-form-search" type="text">
+            <button class="button-form-search" type="submit">Submit your search</button>
         </form>
     </div>
 </div>
 
 <div class="container-result">
-    <h2>Result for «  Lorem ipsum »</h2>
+    <h1>Result for «  Lorem ipsum »</h1>
+    <ul class="list-result">
+        <li class="item-result">
+            <div class="img-item-result">
+                <img src="https://picsum.photos/60/60" alt="" width="60" height="60">
+            </div>
+            <div class="content-item-result">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+        </li>
+        <li class="item-result">
+            <div class="img-item-result">
+                <img src="https://picsum.photos/60/60" alt="" width="60" height="60">
+            </div>
+            <div class="content-item-result">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+        </li>
+        <li class="item-result">
+            <div class="img-item-result">
+                <img src="https://picsum.photos/60/60" alt="" width="60" height="60">
+            </div>
+            <div class="content-item-result">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+        </li>
+        <li class="item-result">
+            <div class="img-item-result">
+                <img src="https://picsum.photos/60/60" alt="" width="60" height="60">
+            </div>
+            <div class="content-item-result">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+        </li>
+        <li class="item-result">
+            <div class="img-item-result">
+                <img src="https://picsum.photos/60/60" alt="" width="60" height="60">
+            </div>
+            <div class="content-item-result">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+
+        </li>
+
+    </ul>
 </div>
 
 <div id="root">

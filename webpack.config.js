@@ -1,4 +1,8 @@
 const path = require('path');
+var webpack = require('webpack');
+var autoprefixer = require('autoprefixer');
+var precss       = require('precss');
+var postcss       = require('postcss');
 
 module.exports = {
     entry: {
@@ -13,9 +17,15 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
+                    {
+                        loader: "style-loader"
+                    },
+                    {
+                        loader: "css-loader"
+                    },
+                    {
+                        loader: "sass-loader"
+                    }
                 ]
             },
             {
@@ -31,5 +41,6 @@ module.exports = {
                 ]
             }
         ]
-    }
+    },
+    watch: true
 };

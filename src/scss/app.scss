@@ -2,6 +2,7 @@
 
 $color-primary: #F25A24;
 $color-content: #696969;
+$color-primary-transparent: rgba(242, 90, 36, 0.5);
 
 // Import font
 
@@ -32,45 +33,207 @@ $color-content: #696969;
 
 // Global
 
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
 body {
   font-family: 'Lato';
   font-size: 1rem;
+  margin: 0;
 }
 
 h1 {
   font-family: 'Kollektif-Bold';
-  font-family: 4rem;
+  font-size: 3.1rem;
   color: $color-primary;
 }
 
 h2 {
   font-family: 'Kollektif-Bold';
-  font-family: 3rem;
+  font-size: 2rem;
   color: $color-primary;
+}
+
+.background-empty {
+  background: none!important;
 }
 
 // Global Container
 
-.container-search, .container-result {
-  width: 50%;
+.app {
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  width: 100%;
+
+  background: white url("../images/chuckthetrooper.png") no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+}
+
+.container-nav, .container-search, .container-result {
+    width: 100%;
+}
+
+.container-nav {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-left: 3rem;
+  }
 }
 
 .container-search {
+
+  padding: 0 1rem;
+  height: calc(100% - 60px);
+  display: flex;
+
+  .form-search {
+
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+
+    align-self: center;
+
+    display: flex;
+    flex-wrap: wrap;
+
+    form {
+      width:100%;
+    }
+
+    .input-text-form-search {
+
+      display: block;
+      width: 100%;
+      padding: .375rem .75rem;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #495057;
+      background-color: #fff;
+      background-clip: padding-box;
+      border: 1px solid #ced4da;
+      border-radius: .25rem;
+      transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      overflow: visible;
+      margin: 1rem auto;
+      box-shadow: 0px 0px 10px 0px $color-primary-transparent;
+
+
+      &:focus {
+        border: 1px solid $color-primary;
+      }
+
+    }
+
+    .button-form-search {
+      cursor: pointer;
+      display: block;
+      padding: .5rem 1rem;
+      font-size: 1.25rem;
+      line-height: 1.5;
+      border-radius: .3rem;
+      color: white;
+      background-color: $color-primary;
+      font-weight: 400;
+      text-align: center;
+      white-space: nowrap;
+      vertical-align: middle;
+      user-select: none;
+      border: 1px solid transparent;
+      transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+      margin: 0 auto;
+    }
+
+  }
+
+  .form-search.full-size {
+    margin-bottom: 60px;
+  }
 
 }
 
 .container-result {
 
+  text-align: center;
+  padding: 0 1rem;
 
-  &--home {
-    background: url("/images/chuckthetrooper.jpg") right center contain;
+
+  .list-result {
+    width: 720px;
+    text-align: left;
+    padding: 0;
+    margin: 0 auto;
+
+    .item-result {
+      list-style: none;
+      display: flex;
+      margin: 0 0 2rem 0;
+
+      .img-item-result {
+
+      }
+
+      .content-item-result {
+
+        p {
+          margin: 0 0 0 1rem;
+        }
+
+      }
+
+    }
   }
+
 }
 
 @media (max-width: 768px) {
 
   .container-search, .container-result {
     width: 100%;
+  }
+
+  .app {
+    background-size: 60%;
+
+  }
+
+  .container-nav {
+    justify-content: center;
+
+    img {
+      margin: 0;
+    }
+  }
+
+  .container-search {
+
+    .form-search {
+      width: 100%;
+    }
+
+  }
+
+  .container-result {
+
+    text-align: center;
+
+
+    .list-result {
+      width: 100%;
+
+      .item-result {
+        list-style: none;
+
+      }
+    }
+
   }
 
 }

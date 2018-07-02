@@ -1,7 +1,5 @@
 import './scss/app.scss';
 
-import logo from './icons/logo.svg';
-
 
 function component() {
 
