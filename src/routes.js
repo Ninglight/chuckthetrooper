@@ -1,39 +1,26 @@
 // React
-import React from 'react' // eslint-disable-line no-unused-vars
-import { Switch, Route } from 'react-router-dom' // eslint-disable-line no-unused-vars
+import React, { Component } from 'react' // eslint-disable-line no-unused-vars
+
+import { observer } from 'mobx-react'
 
 // Layouts
 import Navigation from './components/Navigation' // eslint-disable-line no-unused-vars
 import ContainerSearch from './layouts/ContainerSearch' // eslint-disable-line no-unused-vars
-import ContainerResult from './layouts/ContainerResult' // eslint-disable-line no-unused-vars
+import ContainerResult from './layouts/ContainerJokes' // eslint-disable-line no-unused-vars
 
-const Home = () => (
-  <div>
-    <ContainerSearch />
-  </div>
-)
+import store from './JokesStore' // eslint-disable-line no-unused-vars
 
-const Result = () => (
-  <div>
-    <ContainerSearch />
-    <ContainerResult />
-  </div>
-)
+@observer
+class app extends Component {
+  render () {
+    return (
+      <div className={ store.state === null ? 'app' : 'app background-empty' }>
+        <Navigation />
+        <ContainerSearch store={store}/>
+        <ContainerResult store={store}/>
+      </div>
+    )
+  }
+}
 
-const Main = () => ( // eslint-disable-line no-unused-vars
-  <main>
-    <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route path='/search/:query' component={Result}/>
-    </Switch>
-  </main>
-)
-
-const App = () => (
-  <div>
-    <Navigation />
-    <Main />
-  </div>
-)
-
-export default App
+export default app
