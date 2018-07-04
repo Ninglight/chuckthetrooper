@@ -4,6 +4,8 @@ chuckthetrooper est une application permettant de questionner l'API https://api.
 
 En soumettant une requête à l'API, celle-ci retourne une liste de résultat affichée à l'utilisateur.
 
+Vous pouvez consultez le resultat à l'adresse : https://chuckthetrooper.valentinbourreau.com/
+
 ## Pourquoi Npm, Webpack, React et Redux ?
 
 La stack utilisée est particulièrement populaire dans la communauté React. Bon nombre de tuto, d'aide sont présentes pour cette stack. Cela permet de trouver facilement des sujets liés au problèmes récurents dans développeurs.
@@ -30,7 +32,7 @@ Pour une gestion simple des différents éléments de notre application,**React*
 
 Pour une utilsation du gestionnaire de components React, un systeme de centralisation des données est nécessaire. Un gestionnaire de state est certes lourd pour ce type d'application, mais il offre une lisibilité dans le transfert des données qui ne s'effectue pas par les 'props' de React entre tous les éléments parents et enfants.
 
-Pour la gestion des states, Redux est plus difficilement apréhendable que mobx, par exemple, mais il offre une organisation beaucoup plus claire et squalable, dans la logique des components React. Après quelques essai de mise en place de l'architecture Redux, le pattern utilisé me paraissait beaucoup trop gros pour cette application, perdant de son sens. Mobx se présentait donc comme une solution beaucoup plus simple et implémentable rapidement.
+Pour la gestion des states, Redux est plus difficilement appréhendable que mobx, par exemple, mais il offre une organisation beaucoup plus construite et squalable, dans la logique des components React. Après quelques essais de mise en place de l'architecture Redux, le pattern utilisé me paraissait beaucoup trop gros pour cette application, perdant de son sens. Mobx se présentait donc comme une solution beaucoup plus simple et implémentable rapidement.
  
 Il fut simple de mettre en place mobx mais la gestion des retours asynchrone de notre api.chucknorris a complexifier l'utilisation de cet outil.
 
