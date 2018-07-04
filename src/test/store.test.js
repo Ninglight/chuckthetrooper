@@ -9,7 +9,6 @@ test('assigne right query to updateQuery function', () => {
 });
 
 test('try to test only one return to update results', async () => {
-
     storeTest.updateQuery('He just jumps and chooses when to come down.')
     storeTest.updateResults(storeTest.query)
 

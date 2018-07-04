@@ -5,9 +5,8 @@ import fetch from 'node-fetch'
 // Modules from Mobx
 import { observable, action, runInAction } from 'mobx'
 
-
 /**
- * Classe permettant de gerer les Chuck norris's facts
+ * Chuck norris's facts manager class
  */
 class JokesStore {
   @observable query = ''
@@ -28,7 +27,6 @@ class JokesStore {
    * @param query to resquest api
    */
   @action async updateResults (query) {
-
     // Define api url
     const apiRequest = 'https://api.chucknorris.io/jokes/search?query='
     let queryJokes = apiRequest.concat(query)

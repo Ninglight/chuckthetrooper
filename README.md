@@ -14,23 +14,25 @@ Je crois en le théorème de la _sagesse du peuple_, cependant il est mauvais de
 
 Pour commencer, la gestion des packages se fait via la gestionnaire de package de Node :**NPM**. Il est le gestionnaire de packagage le plus utilisé aujourd'hui. Il n'est pas le plus rapide, si on le compare à**Yarn**par exemple.
  
- Le choix s'est porté sur les habitudes de travail. Malgré la simple portabilité d'un projet depuis npm vers Yarn, il reste plus 
+Ce choix s'est porté sur les habitudes de travail. Une tâche aussi simple que l'import de dépendance est rarement remis en question de mon côte. Le fait de devoir le justifié me mène à penser que mes prochains projets seront portés sur Yarn.
 
 ### Webpack
 
-Longtemps habitué à utiliser**Gulp**, Webpack offre une gestion beaucoup plus modulaire des habituelles task-runners. Avec une communauté de plus en plus conséquentes, il offre un aide sur les loaders à implémenter dans Webpack.
+Longtemps habitué à utiliser**Gulp**, Webpack offre une gestion beaucoup plus modulaire des habituelles task-runners. Avec une communauté de plus en plus conséquentes, les loaders à implementer dans Webpack sont de plus en plus fournit en aide et en paramètre.
 
 Une monté en compétence fut nécessaire pour l'utilisation de cette technologie en démarrant un fichier de config from scratch.
 
-### React
+### React 
 
-Pour une gestion simple des différents components de l'application,**React**offe un découpage de l'intégration html intuitif et rapide. Les éléments y 
+Pour une gestion simple des différents éléments de notre application,**React**offe un découpage de l'intégration html intuitif et rapide. Les éléments y sont stockés dans des components et peuvent être centralisés.
 
-De plus,**React** 
+### Redux -> Mobx
 
-### Redux
+Pour une utilsation du gestionnaire de components React, un systeme de centralisation des données est nécessaire. Un gestionnaire de state est certes lourd pour ce type d'application, mais il offre une lisibilité dans le transfert des données qui ne s'effectue pas par les 'props' de React entre tous les éléments parents et enfants.
 
-Pour la gestion des states Redux est plus difficilement apréhendable que mobx par exemple, mais il offre une organisation beaucoup plus claire et squalable, dans la logique des components React.
+Pour la gestion des states, Redux est plus difficilement apréhendable que mobx, par exemple, mais il offre une organisation beaucoup plus claire et squalable, dans la logique des components React. Après quelques essai de mise en place de l'architecture Redux, le pattern utilisé me paraissait beaucoup trop gros pour cette application, perdant de son sens. Mobx se présentait donc comme une solution beaucoup plus simple et implémentable rapidement.
+ 
+Il fut simple de mettre en place mobx mais la gestion des retours asynchrone de notre api.chucknorris a complexifier l'utilisation de cet outil.
 
 ## Getting started
 
@@ -40,4 +42,4 @@ npm install
 npm run build
 ```
 
-Cette commande nous permet de compiler notre projet en mode 'production'.
+Cette suite de commande nous permet de compiler notre projet en mode 'production'.
