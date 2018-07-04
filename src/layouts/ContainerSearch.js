@@ -15,16 +15,11 @@ class search extends Component {
 
   handleChange (event) {
     this.setState({value: event.target.value})
-    console.log(this.state.value)
   }
 
   handleSubmit (event) {
-    if (this.state.value) {
-      this.props.store.updateQuery(this.state.value.trim())
-      this.props.store.updateResults(this.props.store.query)
-    } else {
-      console.log('ça marche pas')
-    }
+    this.props.store.updateQuery(this.state.value.trim())
+    this.props.store.updateResults(this.props.store.query)
     event.preventDefault()
   }
 
@@ -33,7 +28,7 @@ class search extends Component {
     return (
       <div className={ state === null ? 'container-search' : 'container-search height-auto' }>
         <div className="form-search full-size">
-          <h1 className={state === null ? '' : 'hide' } >Search a new story of chuck norris ?</h1>
+          <h1 className={state === null ? '' : 'hide' } >Search a chuck norris's fact ?</h1>
           <form onSubmit={this.handleSubmit} >
             <input type="text" value={this.state.value} onChange={this.handleChange} className="input-text-form-search" required/>
             <button className="button-form-search" type="submit">Submit your search</button>

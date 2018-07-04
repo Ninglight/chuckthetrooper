@@ -45,9 +45,12 @@ body {
 
 h1 {
   font-family: 'Kollektif-Bold';
-  font-size: 3.1rem;
+  font-size: 2.9rem;
   color: $color-primary;
-  transition: height 500ms 0ms, opacity 500ms 500ms;
+  visibility: visible;
+  opacity: 1;
+  height: 7rem;
+  transition: visibility 500ms 0ms, opacity 500ms 500ms, height 500ms 500ms ;
 }
 
 h2 {
@@ -60,14 +63,10 @@ h2 {
   background: none!important;
 }
 
-.height-auto {
-  height: auto!important;
-}
-
 .hide {
-  transition: height 500ms 500ms, opacity 500ms 0ms;
-  opacity: 0.0;
-  height: 0px;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
 }
 
 // Container
@@ -81,6 +80,7 @@ h2 {
   background: white url("../images/chuckthetrooper.png") no-repeat;
   background-position: right bottom;
   background-size: contain;
+  transition: background 100ms;
 }
 
 #root {
@@ -107,6 +107,12 @@ h2 {
   padding: 0 1rem;
   height: calc(100vh - 60px);
   display: flex;
+  transition: height 500ms 500ms;
+  transition-delay: 500ms;
+
+  &.height-auto {
+    height: 200px;
+  }
 
   .form-search {
 

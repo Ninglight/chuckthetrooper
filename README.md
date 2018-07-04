@@ -37,10 +37,7 @@ Pour la gestion des states Redux est plus difficilement apréhendable que mobx p
 Pour installer l'application, le gestionnaire de package**NPM**va aller nous télécharger toutes les dépendances du projet :
 ```
 npm install
-```
-
-Une fois terminée, nous devons maitenant compilé nous fichiers sources pour être exploitable, et mis en production via Webpack : 
-```
 npm run build
 ```
- Cette commande nous permet de compiler notre projet en mode_production_.
+
+Cette commande nous permet de compiler notre projet en mode 'production'.

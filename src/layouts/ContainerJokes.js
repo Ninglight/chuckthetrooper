@@ -6,7 +6,9 @@ import { observer } from 'mobx-react'
 @observer
 class result extends Component {
   render () {
+    // Add some useful props from store
     const { results, state, query, error } = this.props.store
+    // We manage state
     if (state === 'error') { //
       return (
         <div className="container-result">

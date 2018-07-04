@@ -7,7 +7,9 @@ class navigation extends Component {
   render () {
     return (
       <div className="container-nav">
-        <img src={logo} alt="chuckthetrooper logo"/>
+        <a href="/">
+          <img src={logo} alt="chuckthetrooper logo"/>
+        </a>
       </div>
     )
   }

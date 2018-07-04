@@ -8,7 +8,9 @@ import Navigation from './components/Navigation' // eslint-disable-line no-unuse
 import ContainerSearch from './layouts/ContainerSearch' // eslint-disable-line no-unused-vars
 import ContainerResult from './layouts/ContainerJokes' // eslint-disable-line no-unused-vars
 
-import store from './JokesStore' // eslint-disable-line no-unused-vars
+import JokesStore from './JokesStore' // eslint-disable-line no-unused-vars
+
+const store = new JokesStore()
 
 @observer
 class app extends Component {
