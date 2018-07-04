@@ -35,14 +35,14 @@ class result extends Component {
         return (
           <div className="container-result">
             <h1>Result for «{ query }»</h1>
-            <ul className="list-result">
+            <ul className="block-list block-list-result">
               {results.map(item => (
                 <a href={item.url} target="_blank" key={item.id}>
-                  <li className="item-result">
-                    <div className="img-item-result">
+                  <li className="item-list">
+                    <div className="img-item-list">
                       <img src={item.icon_url} alt="" width="60" height="60"/>
                     </div>
-                    <div className="content-item-result">
+                    <div className="content-item-list">
                       <p>{item.value}</p>
                     </div>
                   </li>

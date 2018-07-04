@@ -28,17 +28,20 @@ const styles = {
     }
   }
 }
-
 // Define the component using these styles and pass it the 'classes' prop.
-const Navigation = ({ classes }) => (
-  <div className={classes.containerNav}>
-    <a href="/">
-      <img src={logo} alt="chuckthetrooper logo"/>
-    </a>
-  </div>
-)
+// Use decoration for inject styles
+@injectSheet(styles)
+class Navigation extends Component {
+  render () {
+    const {classes} = this.props
+    return (
+      <div className={classes.containerNav}>
+        <a href="/">
+          <img src={logo} alt="chuckthetrooper logo"/>
+        </a>
+      </div>
+    )
+  }
+}
 
-// Finally, inject the stylesheet into the component.
-const StyledNavigation = injectSheet(styles)(Navigation)
-
-export default StyledNavigation
+export default Navigation

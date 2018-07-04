@@ -48,11 +48,11 @@ class search extends Component {
     const { state } = this.props.store
     return (
       <div className={ state === null ? 'container-search' : 'container-search height-auto' }>
-        <div className="form-search full-size">
+        <div className="block-form block-form-search full-size">
           <h1 className={state === null ? '' : 'hide' } >Search a chuck norris's fact ?</h1>
           <form onSubmit={this.handleSubmit} >
-            <input type="text" value={this.state.value} onChange={this.handleChange} className="input-text-form-search" required/>
-            <button className="button-form-search" type="submit">Submit your search</button>
+            <input type="text" value={this.state.value} onChange={this.handleChange} className="text-input-form" required/>
+            <button className="button-form" type="submit">Submit your search</button>
           </form>
         </div>
       </div>
