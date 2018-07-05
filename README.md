@@ -6,7 +6,7 @@ En soumettant une requête à l'API, celle-ci retourne une liste de résultat af
 
 Vous pouvez consultez le resultat à l'adresse : https://chuckthetrooper.valentinbourreau.com/
 
-## Pourquoi Npm, Webpack, React et Redux ?
+## Les choix de technologies ?
 
 La stack utilisée est particulièrement populaire dans la communauté React. Bon nombre de tuto, d'aide sont présentes pour cette stack. Cela permet de trouver facilement des sujets liés au problèmes récurents dans développeurs.
  
@@ -30,18 +30,34 @@ Pour une gestion simple des différents éléments de notre application,**React*
 
 ### Redux -> Mobx
 
-Pour une utilsation du gestionnaire de components React, un systeme de centralisation des données est nécessaire. Un gestionnaire de state est certes lourd pour ce type d'application, mais il offre une lisibilité dans le transfert des données qui ne s'effectue pas par les 'props' de React entre tous les éléments parents et enfants.
+Pour une utilisation du gestionnaire de components React, un système de centralisation des données est nécessaire. Un gestionnaire de state est certes lourd pour ce type d'application, mais il offre une lisibilité dans le transfert des données qui ne s'effectue pas par les 'props' de React entre tous les éléments parents et enfants.
 
 Pour la gestion des states, Redux est plus difficilement appréhendable que mobx, par exemple, mais il offre une organisation beaucoup plus construite et squalable, dans la logique des components React. Après quelques essais de mise en place de l'architecture Redux, le pattern utilisé me paraissait beaucoup trop gros pour cette application, perdant de son sens. Mobx se présentait donc comme une solution beaucoup plus simple et implémentable rapidement.
  
-Il fut simple de mettre en place mobx mais la gestion des retours asynchrone de notre api.chucknorris a complexifier l'utilisation de cet outil.
+Il fut simple de mettre en place mobx mais la gestion des retours asynchrone de notre api.chucknorris a complexifié l'utilisation de cet outil.
+
+
+### CSS-in-JS
+
+Ce projet m'a aussi permis de mettre en place le JSS. La théorie est très alléchante. La mise en pratique fut très simple. J'ai pu effectuer quelques tests d'intégration sur les components app(routes.js) et navigation.
+
+Avec l'utilisation des décorateurs, l'utilisation est d'autant plus simple. 
+
 
 ## Getting started
 
 Pour installer l'application, le gestionnaire de package**NPM**va aller nous télécharger toutes les dépendances du projet :
 ```
 npm install
-npm run build
 ```
 
-Cette suite de commande nous permet de compiler notre projet en mode 'production'.
+Pour compiler notre projet en mode _production_, executez la commande : 
+```
+npm run build
+```
+Vous retrouverez l'application prêt pour être mis en production dans le dossier dist.
+
+Pour executer en mode _développement_ avec un auto-refresh des modifications, executer la commande : 
+```
+npm run start
+```
